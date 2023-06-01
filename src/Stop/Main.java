@@ -16,22 +16,13 @@ public class Main
     public static void main(String[] args) 
     {
     	
+    	Scanner scanner = new Scanner(System.in);
+    	
     	System.out.print("Vamos cadastrar o jogador: ");
     	System.out.println("");
     	System.out.println("");
-    	System.out.println("Informe o Nome do jogador: ");
     	
-    	Scanner scanner = new Scanner(System.in);
-    	String Nome = scanner.nextLine();
-    	
-    	System.out.println("Informe o Apelido do jogador: ");
-    	String Apelido = scanner.nextLine();
-    	
-    	System.out.println("Informe a Data de Nascimento (dd/mm/aa): ");
-    	String Nascimento = scanner.nextLine();
-    	
-    	System.out.println("Informe o Sexo (Masculino, Feminino, Outro): ");
-    	String Sexo = scanner.nextLine();
+    		
     	
     	Jogador jogador = new Jogador(Nome, Apelido, Nascimento, Sexo);
     	
@@ -114,5 +105,22 @@ public class Main
             timeLimit = HARD_TIME_LIMIT;
         }
         return timeLimit;
+    }
+    
+    private static String cadastroJogador(String nome, String apelido, String nascimento, String sexo)
+    {
+    	System.out.println("Informe o Nome do jogador: ");
+    	
+    	Scanner scanner = new Scanner(System.in);
+    	nome = scanner.nextLine();
+    	
+    	System.out.println("Informe o Apelido do jogador: ");
+    	apelido = scanner.nextLine();
+    	
+    	System.out.println("Informe a Data de Nascimento (dd/mm/aa): ");
+    	nascimento = scanner.nextLine();
+    	
+    	System.out.println("Informe o Sexo (Masculino, Feminino, Outro): ");
+    	sexo = scanner.nextLine();
     }
 }
