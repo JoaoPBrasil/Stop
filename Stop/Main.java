@@ -43,13 +43,13 @@ public class Main {
             @Override
             public void run() { //comando do tempo
                 if (timeLimit > 0) {
-                    System.out.println("\nTempo restante: " + timeLimit + " segundos");
-                    try {
-						Thread.sleep(15000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-                    timeLimit=timeLimit-15;
+                   
+                    timeLimit=timeLimit-1;
+                    
+                    if(timeLimit % 15==0) {
+                    	 System.out.println("\nTempo restante: " + timeLimit + " segundos");
+                    	
+                    }
                     
                     jogador1.setTempo(timeLimit);
                 } else {
@@ -85,7 +85,7 @@ public class Main {
             Jogador jogador2 = cadastrarJogador(scanner);
 
             System.out.println("O stop é: " + letra);
-
+            System.out.println("Não pode usar as mesmas respostas, do primeiro jogador");
             String[] respostas2 = new String[numcat];
             Timer timer2 = new Timer();
             TimerTask task2 = new TimerTask() {
@@ -94,13 +94,13 @@ public class Main {
                 @Override
                 public void run() { //tempo
                     if (timeLimit2 > 0) {
-                        System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
-                        try {
-                            Thread.sleep(15000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        timeLimit2=timeLimit2-15;
+                       
+                        timeLimit2=timeLimit2-1;
+                        
+                        if(timeLimit2 % 15==0) {
+                       	 System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
+                       	
+                       }
                         jogador2.setTempo(timeLimit2);
                     } else {
                         System.out.println("Tempo esgotado!");
