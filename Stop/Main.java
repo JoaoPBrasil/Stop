@@ -20,7 +20,7 @@ public class Main {
         System.out.println();
         Jogador jogador1 = cadastrarJogador(scanner);
 
-        System.out.print("Informe o número de categorias para o stop: ");
+        System.out.print("Informe o nÃºmero de categorias para o stop: ");
         int numcat = scanner.nextInt();
         scanner.nextLine();
 
@@ -33,7 +33,7 @@ public class Main {
 
         Random random = new Random();
         char letra = (char) (random.nextInt(26) + 'A');
-        System.out.println("O stop é: " + letra);
+        System.out.println("O stop Ã©: " + letra);
 
         String[] respostas = new String[numcat];
         Timer timer = new Timer();
@@ -72,19 +72,19 @@ public class Main {
         timer.cancel();
        
 
-        System.out.println("Stoppp, Parabens você ganhou, chegou no pódio");
-        System.out.print("Tem mais um jogador para jogar? 1- Sim 2- Não\n");
+        System.out.println("Stoppp, Parabens vocÃª ganhou, chegou no pÃ³dio");
+        System.out.print("Tem mais um jogador para jogar? 1- Sim 2- NÃ£o\n");
         int x = scanner.nextInt();
 
         if (x == 1) {
             scanner.nextLine(); // inicio para o jogador 2
-            System.out.println("informe a confimação:");
+            System.out.println("informe a confimaÃ§Ã£o:");
 
             System.out.println("Vamos cadastrar o segundo jogador");
             System.out.println();
             Jogador jogador2 = cadastrarJogador(scanner);
 
-            System.out.println("O stop é: " + letra);
+            System.out.println("O stop Ã©: " + letra);
 
             String[] respostas2 = new String[numcat];
             Timer timer2 = new Timer();
@@ -121,11 +121,11 @@ public class Main {
 
             timer2.cancel();
 
-            System.out.println("Stoppp, Parabens vocês terminaram!");
+            System.out.println("Stoppp, Parabens vocÃªs terminaram!");
         
-            if (jogador1.getTempo() < jogador2.getTempo()) {
+            if (jogador1.getTempo() > jogador2.getTempo()) {
                 System.out.println("O jogador " + jogador1.getNome() + "!, venceu com o melhor tempo!");
-            } else if (jogador1.getTempo() > jogador2.getTempo()) {
+            } else if (jogador1.getTempo() < jogador2.getTempo()) {
                 System.out.println("O jogador " + jogador2.getNome() + "! ,venceu com o melhor tempo!");
             } else {
                 System.out.println("Empate! Ambos os jogadores tiveram o mesmo tempo.");
