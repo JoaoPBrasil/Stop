@@ -18,7 +18,7 @@ public class Main
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Vamos cadastrar o jogador");
+        System.out.println("Vamos cadastrar o jogador: ");
         System.out.println();
         Jogador jogador1 = cadastrarJogador(scanner);
 
@@ -49,7 +49,7 @@ public class Main
                 if (timeLimit > 0) 
                 {
                    
-                    timeLimit=timeLimit-1;
+                    timeLimit = timeLimit - 1;
                     
                     if(timeLimit % 15 == 0) 
                     {
@@ -61,7 +61,7 @@ public class Main
                 } 
                 else 
                 {
-                    System.out.println("Tempo esgotado!");
+                    System.out.println("Tempo esgotado! ");
                     timer.cancel();
                     scanner.close();
                     System.exit(0);
@@ -81,21 +81,21 @@ public class Main
         
         timer.cancel();
 
-        System.out.println("Stoppp, Parabens você ganhou, chegou no pódio");
+        System.out.println("Stop, Parabens você ganhou, chegou no pódio!");
         System.out.print("Tem mais um jogador para jogar? 1- Sim 2- Não\n");
         int x = scanner.nextInt();
 
         if (x == 1) 
         {
             scanner.nextLine(); // inicio para o jogador 2
-            System.out.println("informe a confimação:");
+            System.out.println("informe a confimação: ");
 
-            System.out.println("Vamos cadastrar o segundo jogador");
+            System.out.println("Vamos cadastrar o segundo jogador: ");
             System.out.println();
             Jogador jogador2 = cadastrarJogador(scanner);
 
             System.out.println("O stop é: " + letra);
-            System.out.println("Não pode usar as mesmas respostas, do primeiro jogador");
+            System.out.println("Não pode usar as mesmas respostas, do primeiro jogador!");
             String[] respostas2 = new String[numcat];
             Timer timer2 = new Timer();
             TimerTask task2 = new TimerTask() 
@@ -103,13 +103,14 @@ public class Main
                 int timeLimit2 = getTimeLimit(numcat);
 
                 @Override
-                public void run() { //tempo
+                public void run() 
+		{ //tempo
                     if (timeLimit2 > 0) 
                     {
                        
-                        timeLimit2=timeLimit2-1;
+                        timeLimit2 = timeLimit2 - 1;
                         
-                        if(timeLimit2 % 15==0) 
+                        if(timeLimit2 % 15 == 0) 
                         {
                        	 	System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
                         }
@@ -136,7 +137,7 @@ public class Main
 
             timer2.cancel();
 
-            System.out.println("Stoppp, Parabens vocês terminaram!");
+            System.out.println("Stop, Parabens vocês terminaram!");
         
             if (jogador1.getTempo() > jogador2.getTempo()) 
             {
@@ -187,7 +188,7 @@ public class Main
         {
             timeLimit = Medio;
         } 
-        else if(numcat <=8) 
+        else if (numcat <= 8) 
         {
             timeLimit = Dificil;
         } 
