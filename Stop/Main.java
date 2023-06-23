@@ -7,13 +7,15 @@ import java.util.TimerTask;
 import Stop.model.Jogador;
 import Stop.model.JogadorMult;
 
-public class Main {
+public class Main 
+{
     private static final int Facil = 240; // modo facil
     private static final int Medio = 150; // modo medio
     private static final int Dificil = 100; // modo dificil
     private static final int Hardcore = 60; // modo muito dificil
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Vamos cadastrar o jogador");
@@ -25,7 +27,8 @@ public class Main {
         scanner.nextLine();
 
         String[] categorias = new String[numcat];
-        for (int i = 0; i < numcat; i++) {
+        for (int i = 0; i < numcat; i++) 
+        {
             System.out.print("Insira o nome da categoria: ");
             String nomeCategoria = scanner.nextLine();
             categorias[i] = nomeCategoria;
@@ -37,22 +40,27 @@ public class Main {
 
         String[] respostas = new String[numcat];
         Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
+        TimerTask task = new TimerTask() 
+        {
             int timeLimit = getTimeLimit(numcat);
             
             @Override
             public void run() { //comando do tempo
-                if (timeLimit > 0) {
+                if (timeLimit > 0) 
+                {
                    
                     timeLimit=timeLimit-1;
                     
-                    if(timeLimit % 15==0) {
+                    if(timeLimit % 15 == 0) 
+                    {
                     	 System.out.println("\nTempo restante: " + timeLimit + " segundos");
                     	
                     }
                     
                     jogador1.setTempo(timeLimit);
-                } else {
+                } 
+                else 
+                {
                     System.out.println("Tempo esgotado!");
                     timer.cancel();
                     scanner.close();
@@ -64,7 +72,8 @@ public class Main {
 
         timer.scheduleAtFixedRate(task, 1000, 1000);
 
-        for (int j = 0; j < numcat; j++) {
+        for (int j = 0; j < numcat; j++) 
+        {
             System.out.print(categorias[j] + ": ");
             String resposta = scanner.nextLine();
             respostas[j] = resposta;
@@ -76,7 +85,8 @@ public class Main {
         System.out.print("Tem mais um jogador para jogar? 1- Sim 2- Não\n");
         int x = scanner.nextInt();
 
-        if (x == 1) {
+        if (x == 1) 
+        {
             scanner.nextLine(); // inicio para o jogador 2
             System.out.println("informe a confimação:");
 
@@ -88,21 +98,26 @@ public class Main {
             System.out.println("Não pode usar as mesmas respostas, do primeiro jogador");
             String[] respostas2 = new String[numcat];
             Timer timer2 = new Timer();
-            TimerTask task2 = new TimerTask() {
+            TimerTask task2 = new TimerTask() 
+            {
                 int timeLimit2 = getTimeLimit(numcat);
 
                 @Override
                 public void run() { //tempo
-                    if (timeLimit2 > 0) {
+                    if (timeLimit2 > 0) 
+                    {
                        
                         timeLimit2=timeLimit2-1;
                         
-                        if(timeLimit2 % 15==0) {
+                        if(timeLimit2 % 15==0) 
+                        {
                        	 System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
                        	
-                       }
+                        }
                         jogador2.setTempo(timeLimit2);
-                    } else {
+                    } 
+                    else 
+                    {
                         System.out.println("Tempo esgotado!");
                         timer.cancel();
                         scanner.close();
@@ -113,7 +128,8 @@ public class Main {
 
             timer2.scheduleAtFixedRate(task2, 1000, 1000);
 
-            for (int j = 0; j < numcat; j++) {
+            for (int j = 0; j < numcat; j++) 
+            {
                 System.out.print(categorias[j] + ": ");
                 String resposta = scanner.nextLine();
                 respostas2[j] = resposta;
@@ -123,20 +139,29 @@ public class Main {
 
             System.out.println("Stoppp, Parabens vocês terminaram!");
         
-            if (jogador1.getTempo() > jogador2.getTempo()) {
+            if (jogador1.getTempo() > jogador2.getTempo()) 
+            {
                 System.out.println("O jogador " + jogador1.getNome() + "! Venceu com o melhor tempo!");
-            } else if (jogador1.getTempo() < jogador2.getTempo()) {
+            }
+            else if (jogador1.getTempo() < jogador2.getTempo()) 
+            {
                 System.out.println("O jogador " + jogador2.getNome() + "! Venceu com o melhor tempo!");
-            } else {
+            } 
+            else 
+            {
                 System.out.println("Empate! Ambos os jogadores tiveram o mesmo tempo.");
             }
-        } else {
+            
+        } 
+        else 
+        {
             System.out.println("O jogador " + jogador1.getNome() + " teve o tempo de " + jogador1.getTempo() + " segundos");
         }
 
         scanner.close();
-        }
-    private static Jogador cadastrarJogador(Scanner scanner) { //class jogador
+       }
+    private static Jogador cadastrarJogador(Scanner scanner) 
+    { //class jogador
         System.out.println("Informe o Nome do jogador: ");
         String nome = scanner.nextLine();
 
@@ -153,15 +178,23 @@ public class Main {
 
     }
 
-    private static int getTimeLimit(int numcat) { //modo da dificuldade 
+    private static int getTimeLimit(int numcat) 
+    { //modo da dificuldade 
         int timeLimit;
-        if (numcat <= 2) {
+        if (numcat <= 2) 
+        {
             timeLimit = Facil;
-        } else if (numcat <= 4) {
+        } 
+        else if (numcat <= 4) 
+        {
             timeLimit = Medio;
-        } else if(numcat <=8) {
+        } 
+        else if(numcat <=8) 
+        {
             timeLimit = Dificil;
-        } else {
+        } 
+        else 
+        {
         	timeLimit = Hardcore;
         }
         
