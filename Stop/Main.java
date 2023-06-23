@@ -124,9 +124,9 @@ public class Main {
             System.out.println("Stoppp, Parabens vocês terminaram!");
         
             if (jogador1.getTempo() > jogador2.getTempo()) {
-                System.out.println("O jogador " + jogador1.getNome() + "!, venceu com o melhor tempo!");
+                System.out.println("O jogador " + jogador1.getNome() + "! Venceu com o melhor tempo!");
             } else if (jogador1.getTempo() < jogador2.getTempo()) {
-                System.out.println("O jogador " + jogador2.getNome() + "! ,venceu com o melhor tempo!");
+                System.out.println("O jogador " + jogador2.getNome() + "! Venceu com o melhor tempo!");
             } else {
                 System.out.println("Empate! Ambos os jogadores tiveram o mesmo tempo.");
             }
