@@ -78,8 +78,8 @@ public class Main
             String resposta = scanner.nextLine();
             respostas[j] = resposta;
         }
+        
         timer.cancel();
-       
 
         System.out.println("Stoppp, Parabens você ganhou, chegou no pódio");
         System.out.print("Tem mais um jogador para jogar? 1- Sim 2- Não\n");
@@ -111,8 +111,7 @@ public class Main
                         
                         if(timeLimit2 % 15==0) 
                         {
-                       	 System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
-                       	
+                       	 	System.out.println("\nTempo restante: " + timeLimit2 + " segundos");
                         }
                         jogador2.setTempo(timeLimit2);
                     } 
@@ -175,7 +174,6 @@ public class Main
         String sexo = scanner.nextLine();
         int tempo = 0;
         return new JogadorMult(nome, apelido, nascimento, sexo ,tempo);
-
     }
 
     private static int getTimeLimit(int numcat) 
