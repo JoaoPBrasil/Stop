@@ -45,7 +45,8 @@ public class Main
             int timeLimit = getTimeLimit(numcat);
             
             @Override
-            public void run() { //comando do tempo
+            public void run() 
+	    { //comando do tempo
                 if (timeLimit > 0) 
                 {
                    
