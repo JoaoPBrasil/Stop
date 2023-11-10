@@ -1,4 +1,4 @@
-# ProjetoStopEmJava
+# Projeto Stop Em Java
 Pt-BR: O jogo "Stop" codado na linguagem Java.
 
 En: The game "Stop" coded with Java's language.
